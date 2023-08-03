@@ -3,18 +3,22 @@ const fs = require("fs");
 const { Square, Circle, Triangle } = require("./lib/Shapes.js");
 
 function writetofile(filename, data) {
-  let SVG = '<svg width="300" height="" xmlns="http://www.w3.org/2000/svg">';
+  let SVG =
+    '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
   let shapechoice;
   if (data.shape === "Square") {
     shapechoice = new Square();
+    SVG += `${shapechoice.render()}"${data.shapecolor}"/>`;
   } else if (data.shape === "Circle") {
     shapechoice = new Circle();
+    SVG += `${shapechoice.render()}"${data.shapecolor}"/>`;
   } else if (data.shape === "Triangle") {
     shapechoice = new Triangle();
+    SVG += `${shapechoice.render()}"${data.shapecolor}"/>`;
   }
-  SVG += `${data.shape}`;
-  SVG += `${data.shapecolor}`;
-  SVG += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${data.textcolor}">${data.text}</text>`;
+
+  SVG += `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textcolor}">${data.text}</text>`;
+  SVG += `</svg>`;
 
   fs.writeFile(filename, SVG, (err) => {
     if (err) throw err;
