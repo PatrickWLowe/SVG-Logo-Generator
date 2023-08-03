@@ -1,0 +1,19 @@
+{
+  "name": "SVG-Logo-Generator",
+  "version": "1.0.0",
+  "description": "Generates a logo in SVG format",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
