@@ -55,7 +55,12 @@ function userprompt() {
       },
     ])
     .then((data) => {
-      writetofile("logo.svg", data);
+      if (data.text.length > 3) {
+        console.log("Please enter a text with 3 letters maximum");
+        userprompt();
+      } else {
+        writetofile("logo.svg", data);
+      }
     });
 }
 
