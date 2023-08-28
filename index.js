@@ -17,7 +17,7 @@ function writetofile(filename, data) {
     SVG += `${shapechoice.render()}"${data.shapecolor}"/>`;
   }
 
-  SVG += `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textcolor}">${data.text}</text>`;
+  SVG += `<text x="150" y="125" font-size="50" text-anchor="middle" fill="${data.textcolor}">${data.text}</text>`;
   SVG += `</svg>`;
 
   fs.writeFile(filename, SVG, (err) => {
